@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.myMenu{
+    @apply text-[#f36ea5] font-bold tracking-wide  transition-colors duration-200 hover:text-blue-700
+  }
+  .myContainer{
+    @apply  max-w-[90%] mx-auto lg:max-w-[85%]
+  }
