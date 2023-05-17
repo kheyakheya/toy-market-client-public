@@ -21,6 +21,9 @@ const Register = () => {
         if (passwordInput.length < 6) {
             setPassError("Password must be at least 6 characters long");
         }
+        else if (!/.*[A-Z].*/.test(passwordInput)) {
+            setPassError("Password must have one uppercase");
+          } 
 
         else {
             setPassError("");
