@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ToyCard from './ToyCard';
 
 const CategoryToy = () => {
     const [toys,setToys]=useState([]);
@@ -13,9 +14,9 @@ const CategoryToy = () => {
     }
     return (
         <div>
-            <h2>Toys {toys.length}</h2>
+            <h2 className=' text-center text-5xl tracking-wide font-bold text-[#f36ea5] mt-6 mb-24'>Shop by Category</h2>
             {/* tab */}
-            <div className="tab-container text-center">
+            <div className=" myContainer text-center mb-12">
                 <div className="text-center w-full m-auto">
                     <div className="tabs d-flex justify-center items-center">
                         <div
@@ -44,9 +45,9 @@ const CategoryToy = () => {
             </div>
            
             {/* tab end */}
-            {/* <div className='mycontainer my-12 grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center'>
-            {jobs?.map(job=><JobCard key={job._id} job={job}></JobCard>)}
-            </div> */}
+            <div className='myContainer my-12 grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center'>
+            {toys?.map(toy=><ToyCard key={toy._id} toy={toy}></ToyCard>)}
+            </div>
         </div>
     );
 };
