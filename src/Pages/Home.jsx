@@ -4,7 +4,7 @@ import CategoryToy from '../Components/CategoryToy';
 const Home = () => {
     return (
         <div>
-           <h3>home</h3> 
+           
            <CategoryToy></CategoryToy>
         </div>
     );

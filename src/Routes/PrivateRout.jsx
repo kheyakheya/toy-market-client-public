@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import Swal from 'sweetalert2'
 
 const PrivateRout = ({children}) => {
     const {user,loading}=useContext(AuthContext);
@@ -12,7 +13,13 @@ const PrivateRout = ({children}) => {
     if(user){
         return children;
     }
-    return  <Navigate to="/login" state={{from:location}} replace></Navigate>
+    Swal.fire({
+        title: 'Login!',
+        text: '“You have to log in first to view details”',
+        icon: 'error',
+        confirmButtonText: 'Login'
+      })
+    return ( <Navigate to="/login" state={{from:location}} replace></Navigate>)
     
 };
 
