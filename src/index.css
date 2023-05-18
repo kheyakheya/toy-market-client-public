@@ -8,3 +8,6 @@
   .myContainer{
     @apply  max-w-[90%] mx-auto lg:max-w-[85%]
   }
+  .myInput{
+    @apply  p-4 m-2 drop-shadow-xl rounded-md 
+  }
