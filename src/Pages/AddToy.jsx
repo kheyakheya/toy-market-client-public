@@ -1,13 +1,34 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../Providers/AuthProvider';
+import Swal from 'sweetalert2'
+
 
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => {
-        console.log(data);
+    const onSubmit = toy => {
+        console.log(toy);
+        fetch('http://localhost:5000/allToys',{
+            method:'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(toy)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'You have added a toy!',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+           
+        })
+
     }
     return (
         <div className=' bg-pink-200'>
@@ -28,7 +49,7 @@ const AddToy = () => {
                     <input className="myInput" placeholder="price bdt" type="number" {...register("price", { required: true })} />
                     <input className="myInput" placeholder="rating"  {...register("rating", { required: true })} />
                     <input className="myInput" placeholder="quantity" type="number"  {...register("quantity", { required: true })} />
-                    <input className="myInput" placeholder="description"   {...register("price")} />
+                    <input className="myInput" placeholder="description"   {...register("description")} />
 
                     <select className="p-4 m-2 drop-shadow-xl rounded-md" {...register("category")}>
                         <option value="princess">Princess</option>
