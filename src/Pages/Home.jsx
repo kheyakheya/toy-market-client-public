@@ -1,4 +1,3 @@
-import React from 'react';
 import CategoryToy from '../Components/CategoryToy';
 
 const Home = () => {
