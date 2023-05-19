@@ -1,7 +1,13 @@
-import React from 'react';
 import './Gallery.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const photos = [
     "https://img.freepik.com/free-photo/doll-wearing-yellow-ribbon_23-2149416248.jpg?w=740&t=st=1684483231~exp=1684483831~hmac=4ebf6468b421c1730fc63a325a255ad887f14e927028b4b3e3e8605d2ae0f4c9",
     "https://as1.ftcdn.net/v2/jpg/00/60/45/72/1000_F_60457208_O6OJ6L3IIAjiMXIUc4z7QtN2rA8eLkfZ.jpg",
@@ -17,9 +23,9 @@ const Gallery = () => {
   return (
     <div className='mb-16 bg-pink-200 '>
   
-       <h2 className=' text-center text-5xl tracking-wide font-bold text-secondary mb-24 pt-24'>Doll Gallery</h2>
+       <h2 data-aos='fade-left' className=' text-center text-5xl tracking-wide font-bold text-secondary mb-24 pt-24'>Doll Gallery</h2>
 
-      <div className="gallery-container myContainer pb-32">
+      <div data-aos='fade-left' className="gallery-container myContainer pb-32">
         {photos.map((photo, index) => (
           <img key={index} src={photo} alt={`Photo ${index + 1}`} className="gallery-image" />
         ))}
