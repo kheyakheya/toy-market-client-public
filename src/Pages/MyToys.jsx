@@ -7,37 +7,69 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
 
     const [myToys, setMyToys] = useState([]);
-    const [control,setControl]=useState(false);
+    const [control, setControl] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myToys/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
-    }, [user,control])
-// upadte
-    const handleUpdate=(info)=>{
-        fetch(`http://localhost:5000/update/${info._id}`,{
+    }, [user, control])
+    // upadte
+    const handleUpdate = (info) => {
+        fetch(`http://localhost:5000/update/${info._id}`, {
             method: 'PUT',
-            headers: {'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(info)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            if(data.modifiedCount>0){
-                setControl(!control);
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'You have updated a toy!',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    setControl(!control);
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'You have updated a toy!',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
     }
     // Delete
-    const handleDelete=(id)=>{
-        console.log(id)
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/toy/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => { 
+                        console.log(data)
+                        if(data.deletedCount>0){
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        const remaining= myToys.filter(toy=>toy._id !== id)
+                        setMyToys(remaining);
+
+                        }
+                       
+                     })
+                
+            }
+        })
+
+
     }
     return (
         <div>
@@ -85,7 +117,7 @@ const MyToys = () => {
                                 </td>
                                 <td>
 
-                                    <button onClick={()=>handleDelete(toy._id)} className='btn border-none bg-[#f36ea5]'>Delete</button>
+                                    <button onClick={() => handleDelete(toy._id)} className='btn border-none bg-[#f36ea5]'>Delete</button>
 
                                 </td>
 
