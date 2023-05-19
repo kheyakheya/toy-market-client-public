@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReviewCard = ({review}) => {
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-full bg-base-100 shadow-xl glass">
         <figure className="px-10 pt-10" >
         <img className="h-24 w-24 rounded-full  border-pink-200 border-4" src={review.profileImage} alt="girl" />
         </figure>

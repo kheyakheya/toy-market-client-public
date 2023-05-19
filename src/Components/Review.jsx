@@ -20,12 +20,14 @@ const reviews = [
 ]
 const Review = () => {
     return (
-        <div>
+        <div className='bg-pink-200 pb-24'>
+            <div className='myContainer'>
             <h2 data-aos='fade-left' className=' text-center text-5xl tracking-wide font-bold text-secondary mb-24 pt-24'>Princess Perspective</h2>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 place-items-center'>
                 {reviews.map((review, index) => <ReviewCard key={index} review={review} ></ReviewCard>)}
             </div>
+        </div>
         </div>
     );
 };
