@@ -5,7 +5,7 @@ const HotDeals = () => {
         <div className='myContainer'>
             <h2  className=' text-center text-5xl tracking-wide font-bold text-secondary mb-24 pt-24'>Hot Deals</h2>
 
-            <div className="carousel rounded-box">
+            <div className="carousel rounded-box  pb-24">
                 <div className="carousel-item">
                     <div className="card w-96 glass">
                         <figure><img src="https://t3.ftcdn.net/jpg/00/28/78/32/240_F_28783272_McJzgAYLurO4wEnWAfwDDq9a9RpXRofe.jpg" alt="car!" /></figure>
@@ -13,7 +13,7 @@ const HotDeals = () => {
                             <h2 className="card-title">Life hack</h2>
                             <p>How to park your car at your garage?</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Learn now!</button>
+                                <button className="btn btn-primary">Get now!</button>
                             </div>
                         </div>
                     </div>
