@@ -1,0 +1,19 @@
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 10px;
+  }
+  
+  .gallery-image {
+    width: 100%;
+    height: 250px; /* Adjust the desired height value */
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-gap: 8px;
+    }
+  }
+  

@@ -13,17 +13,17 @@ const Navbar = () => {
     }
     const navItems = <>
         
-        <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-blue-700 font-bold' : 'myMenu')}>Home</NavLink>
+        <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-secondary text-2xl font-bold' : 'myMenu')}>Home</NavLink>
         </li>
-        <li><NavLink to='/allToy' className={({ isActive }) => (isActive ? 'text-blue-700 font-bold' : 'myMenu')}>All Toys</NavLink>
+        <li><NavLink to='/allToy' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>All Toys</NavLink>
         </li> 
          {user?.email ? 
         <>
-        <li><NavLink to='/myToys' className={({ isActive }) => (isActive ? 'text-blue-700 font-bold' : 'myMenu')}>My Toys</NavLink>
+        <li><NavLink to='/myToys' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>My Toys</NavLink>
          </li>
-        <li><NavLink to='/addToy' className={({ isActive }) => (isActive ? 'text-blue-700 font-bold' : 'myMenu')}>Add Toys</NavLink>
+        <li><NavLink to='/addToy' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>Add Toys</NavLink>
          </li>
-        <li><NavLink to='/blog' className={({ isActive }) => (isActive ? 'text-blue-700 font-bold' : 'myMenu')}>Blog</NavLink>
+        <li><NavLink to='/blog' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>Blog</NavLink>
          </li>
 
         
@@ -31,7 +31,7 @@ const Navbar = () => {
         
         <li><Link  className= 'myMenu'><button onClick={handleLogOut}>Logout</button></Link>
         </li>
-        </> : <li><NavLink to='/login' className={({ isActive }) => (isActive ? 'text-blue-700 font-bold' : 'myMenu')}>Login</NavLink>
+        </> : <li><NavLink to='/login' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>Login</NavLink>
         </li> } 
     </>
     return (

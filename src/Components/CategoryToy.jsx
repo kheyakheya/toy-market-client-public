@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ToyCard from './ToyCard';
 
 const CategoryToy = () => {
@@ -14,7 +14,7 @@ const CategoryToy = () => {
     }
     return (
         <div>
-            <h2 className=' text-center text-5xl tracking-wide font-bold text-[#f36ea5] mt-6 mb-24'>Shop by Category</h2>
+            <h2 className=' text-center text-5xl tracking-wide font-bold text-secondary mt-6 mb-24'>Shop by Category</h2>
             {/* tab */}
             <div className=" myContainer text-center mb-12">
                 <div className="text-center w-full m-auto">
