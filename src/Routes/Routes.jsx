@@ -8,11 +8,13 @@ import SingleToy from "../Pages/SingleToy";
 import PrivateRout from "./PrivateRout";
 import AllToys from "../Pages/AllToys";
 import MyToys from "../Pages/MyToys";
+import ErroePage from "../Pages/ErroePage";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout></Layout>,
+      errorElement:<ErroePage></ErroePage>,
       children:[
         {
           path:'/',

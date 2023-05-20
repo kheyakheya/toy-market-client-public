@@ -8,7 +8,7 @@ const PrivateRout = ({children}) => {
     const location=useLocation();
     console.log(location);
     if(loading){ 
-        return (<div className='flex justify-center items-center h-[calc(100vh-68px)]'><button className="btn bg-orange-400 border-none btn-square loading"></button></div>)
+        return (<div className='flex justify-center items-center h-[calc(100vh-68px)]'><button className="btn bg-pink-800 border-none btn-square loading"></button></div>)
     }
     if(user){
         return children;

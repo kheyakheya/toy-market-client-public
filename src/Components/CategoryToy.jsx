@@ -1,3 +1,5 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 import ToyCard from './ToyCard';
 
@@ -9,12 +11,20 @@ const CategoryToy = () => {
         .then(res=>res.json())
         .then(data=>setToys(data))
     },[active])
+
+
     const handleActive=(status)=>{
         setActive(status);
     }
+    // aos
+    useEffect(() => {
+        AOS.init();
+      }, []);
+
+
     return (
         <div>
-            <h2  className='text-center text-5xl tracking-wide font-bold text-secondary mt-6 mb-24'>Shop by Category</h2>
+            <h2  data-aos="fade-left" className='text-center text-5xl tracking-wide font-bold text-secondary mt-6 mb-24'>Shop by Category</h2>
             {/* tab */}
             <div className=" myContainer text-center mb-12">
                 <div className="text-center w-full m-auto">

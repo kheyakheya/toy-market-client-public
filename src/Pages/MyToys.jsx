@@ -72,7 +72,7 @@ const MyToys = () => {
 
     }
     return (
-        <div>
+        <div className='mb-24'>
             <h1 className='text-4xl  text-secondary tracking-wide  pt-12 mb-12 text-center font-bold'>My Toys</h1>
 
             <div className="myContainer overflow-x-auto">

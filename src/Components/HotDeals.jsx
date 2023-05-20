@@ -1,11 +1,17 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect, useState } from 'react';
 
 const HotDeals = () => {
+    useEffect(() => {
+        AOS.init();
+      }, []);
     return (
         <div className='myContainer'>
-            <h2  className=' text-center text-5xl tracking-wide font-bold text-secondary mb-24 pt-24'>Hot Deals</h2>
+            <h2 data-aos="fade-left"  className=' text-center text-5xl tracking-wide font-bold text-secondary mb-12 pt-24'>Hot Deals</h2>
 
-            <div className="carousel rounded-box  pb-24">
+            <div className="carousel rounded-box  pb-12">
                 <div className="carousel-item">
                     <div className="card w-96 glass">
                         <figure><img src="https://t3.ftcdn.net/jpg/00/28/78/32/240_F_28783272_McJzgAYLurO4wEnWAfwDDq9a9RpXRofe.jpg" alt="car!" /></figure>
@@ -75,6 +81,9 @@ const HotDeals = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='hidden md:flex justify-end pb-24'>
+                <button className='btn btn-secondary'>Slide to Choose Yours &gt;&gt; </button>
             </div>
         </div>
     );

@@ -19,6 +19,8 @@ const Gallery = () => {
     "https://t4.ftcdn.net/jpg/03/93/30/27/240_F_393302734_fDwyuEC9umr6ttfZFtAFurNgMW7PZsy4.jpg",
     "https://t4.ftcdn.net/jpg/06/00/96/51/240_F_600965108_uuS1EpAKkVCNT9e1fE7gbLE6nZA4VgIL.jpg",
     "https://t4.ftcdn.net/jpg/04/52/53/03/240_F_452530391_upbiFwZzaRG3aVsUPvjH8ee39wpMbRRI.jpg",
+    "https://t3.ftcdn.net/jpg/00/28/78/32/240_F_28783272_McJzgAYLurO4wEnWAfwDDq9a9RpXRofe.jpg",
+    "https://t3.ftcdn.net/jpg/05/64/72/76/240_F_564727613_7g5fko4xVYgaHsmxw3CldRICMHhKcg7E.jpg"
   ];
   return (
     <div className='mb-16 bg-pink-200 '>
