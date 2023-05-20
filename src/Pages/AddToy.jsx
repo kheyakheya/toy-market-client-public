@@ -35,7 +35,7 @@ const AddToy = () => {
 
             <h1 className='text-4xl  text-secondary tracking-wide  pt-12 mb-12 text-center font-bold'>Add A Toy</h1>
             {/* input fields */}
-            <form className='myContainer my-12' onSubmit={handleSubmit(onSubmit)}>
+            <form className='myContainer ' onSubmit={handleSubmit(onSubmit)}>
                 {/* errors will return when field validation fails  */}
                 {errors.exampleRequired && <span>This field is required</span>}
                 {/* register your input into the hook by invoking the "register" function */}

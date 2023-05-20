@@ -28,7 +28,7 @@ const AllToys = () => {
            </div>
 
             <div className="myContainer overflow-x-auto">
-                <table className="table w-full">
+                <table className="table w-full my-24">
                     {/* head */}
                     <thead>
                         <tr>
