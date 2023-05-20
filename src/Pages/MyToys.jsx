@@ -72,25 +72,27 @@ const MyToys = () => {
 
     }
     return (
-        <div className='mb-24'>
+        <div className=' bg-pink-100'>
             <h1 className='text-4xl  text-secondary tracking-wide  pt-12 mb-12 text-center font-bold'>My Toys</h1>
 
-            <div className="myContainer overflow-x-auto">
+           <div className='pb-24'>
+           <div className="myContainer  overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
                     <thead>
                         <tr>
                             <th></th>
-                            <th className='text-[#f36ea5]'>Seller Name</th>
+                            <th className='text-[#f36ea5]'>Toy image</th>
                             <th className='text-[#f36ea5]'>Seller Name</th>
                             <th className='text-[#f36ea5]'>Toy Name</th>
                             <th className='text-[#f36ea5]'>Category</th>
                             <th className='text-[#f36ea5]'>Price</th>
                             <th className='text-[#f36ea5]'>Rating</th>
                             <th className='text-[#f36ea5]'>Quantity</th>
-                            <th className='text-[#f36ea5]'>Detail</th>
                             <th className='text-[#f36ea5]'>Update</th>
                             <th className='text-[#f36ea5]'>Delete</th>
+                            <th className='text-[#f36ea5]'>Detail</th>
+
                             <th></th>
                             <th></th>
 
@@ -110,7 +112,6 @@ const MyToys = () => {
                                 <td>{toy?.price}</td>
                                 <td>{toy?.rating}</td>
                                 <td>{toy?.quantity}</td>
-                                <td>{toy?.description}</td>
                                 <td>
                                     <label htmlFor={`my-modal-${index}`} className="btn border-none bg-[#f36ea5]">update</label>
                                     <Update index={index} toy={toy} handleUpdate={handleUpdate}></Update>
@@ -120,6 +121,8 @@ const MyToys = () => {
                                     <button onClick={() => handleDelete(toy._id)} className='btn border-none bg-[#f36ea5]'>Delete</button>
 
                                 </td>
+                                <td>{toy?.description}</td>
+
 
                             </tr>
                         )}
@@ -127,6 +130,7 @@ const MyToys = () => {
                     </tbody>
                 </table>
             </div>
+           </div>
         </div>
     );
 };

@@ -3,7 +3,7 @@ import logo from '../assets/logo.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-pink-100 text-base-content">
+            <footer className="footer p-10 bg-pink-200 text-base-content">
                 <div>
                     <img className='h-12 w-12' src={logo} alt="" />
                     <p><span className='text-secondary font-bold'>TOYOMOY</span><br />A World full of princesses</p>

@@ -31,21 +31,21 @@ const CategoryToy = () => {
                     <div className="tabs d-flex justify-center items-center">
                         <div
                             onClick={() => handleActive("princess")}
-                            className={`tab rounded-lg text-xl  font-bold ${active == "princess" ? " bg-[#f36ea5] text-white" : ""
+                            className={`tab rounded-lg text-xl  font-bold ${active == "princess" ? " bg-secondary text-white" : ""
                                 }`}
                         >
                             Princess
                         </div>
                         <div
                             onClick={() => handleActive("barbie")}
-                            className={`tab rounded-lg text-xl font-bold   ${active == "barbie" ? " bg-[#f36ea5] text-white" : ""
+                            className={`tab rounded-lg text-xl font-bold   ${active == "barbie" ? " bg-secondary text-white" : ""
                                 }`}
                         >
                             Barbie
                         </div>
                         <div
                             onClick={() => handleActive("singing")}
-                            className={`tab rounded-lg text-xl font-bold  ${active == "singing" ? " bg-[#f36ea5] text-white" : ""
+                            className={`tab rounded-lg text-xl font-bold  ${active == "singing" ? " bg-secondary text-white" : ""
                                 }`}
                         >
                             Singing

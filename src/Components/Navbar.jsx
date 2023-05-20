@@ -17,13 +17,14 @@ const Navbar = () => {
         </li>
         <li><NavLink to='/allToy' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>All Toys</NavLink>
         </li> 
+        <li><NavLink to='/blog' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>Blog</NavLink>
+        </li>
+
          {user?.email ? 
         <>
         <li><NavLink to='/myToys' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>My Toys</NavLink>
          </li>
         <li><NavLink to='/addToy' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>Add Toys</NavLink>
-         </li>
-        <li><NavLink to='/blog' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>Blog</NavLink>
          </li>
 
         

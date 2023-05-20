@@ -16,7 +16,7 @@ const AllToys = () => {
     return (
         <div className='bg-pink-100'>
             <h1 className='text-4xl  text-secondary tracking-wide  pt-12 mb-12 text-center font-bold'>All Toys</h1>
-           <div className='flex justify-center items-center my-8'>
+           <div className='flex justify-center items-center mb-8'>
            <div className="form-control text-center">
                 <div className="input-group">
                     <input onChange={(e)=>setSearchText(e.target.value)} type="text" placeholder="Search…" className="input input-bordered" />
@@ -28,7 +28,7 @@ const AllToys = () => {
            </div>
 
             <div className="myContainer overflow-x-auto">
-                <table className="table w-full my-24">
+                <table className="table w-full mb-24 mt-6">
                     {/* head */}
                     <thead>
                         <tr>

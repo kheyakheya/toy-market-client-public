@@ -23,7 +23,7 @@ const ToyCard = ({ toy }) => {
                 </div>
                 <div className="card-actions justify-end">
                     <Link to={`/toy/${_id}`}>
-                    <button className="btn border-none bg-[#f36ea5]">View Details</button>
+                    <button className="btn border-none bg-secondary">View Details</button>
                     </Link>
                 </div>
             </div>

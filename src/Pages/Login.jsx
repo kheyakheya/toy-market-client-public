@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react';
+import  { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const {logIn, googleLogin}=useContext(AuthContext)
@@ -79,10 +80,13 @@ const Login = () => {
                     <p className='text-red-700 text-xl px-8 py-4'><small>{error}</small></p>
                     <p className='text-green-700 text-xl px-8'><small >{success}</small></p>
                     
-                    <Link className='px-8' to="/register" ><span>New to TOYOMOY?</span><button className=" px-2 btn btn-link">Register</button></Link>
-                    <div className='card-body'>
-                    <button onClick={handleGoogleLogin} className="btn border-none bg-[#f36ea5]">Google Login</button>
+                    <Link className='px-8 -mt-6' to="/register" ><span>New to TOYOMOY?</span><button className=" px-2 btn btn-link">Register</button></Link>
+                    
+                    <div className="divider text-secondary">login with GOOGlE</div>
+                    <div className='text-center'>
+                         <button  className='btn btn-secondary btn-outline mb-8' onClick={handleGoogleLogin} ><FaGoogle className='text-secondary'></FaGoogle></button>
                     </div>
+                    
                     
 
                 </div>
