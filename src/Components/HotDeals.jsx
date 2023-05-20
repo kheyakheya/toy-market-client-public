@@ -82,7 +82,7 @@ const HotDeals = () => {
                     </div>
                 </div>
             </div>
-            <div className='hidden md:flex justify-end pb-24'>
+            <div className='flex justify-end pb-24'>
                 <button className='btn btn-secondary'>Slide to Choose Yours &gt;&gt; </button>
             </div>
         </div>

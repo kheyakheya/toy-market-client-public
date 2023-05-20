@@ -10,8 +10,8 @@ const Update = ({index,toy, handleUpdate}) => {
         <input type="checkbox" id={`my-modal-${index}`} className="modal-toggle" />
         <div className="modal">
             <div className="modal-box w-11/12 max-w-5xl">
-                <h3 className="font-bold text-lg">Update Informations {toy._id}</h3>
-                 <form className='myContainer my-12' onSubmit={handleSubmit(handleUpdate)}>
+                <h3 className="font-bold  text-center text-secondary text-2xl">Update Information of {toy.toyName}</h3>
+                 <form className='myContainer mt-12' onSubmit={handleSubmit(handleUpdate)}>
                 {/* errors will return when field validation fails  */}
                 {errors.exampleRequired && <span>This field is required</span>}
                 {/* register your input into the hook by invoking the "register" function */}
@@ -20,18 +20,18 @@ const Update = ({index,toy, handleUpdate}) => {
                     <input className="hidden" placeholder="id" defaultValue={toy._id} {...register("_id")} />
 
                     <div>
-                    <label>Price</label>
+                    <label className='font-bold ml-2 text-secondary'>Price</label>
                     <br />
                     <input className="myInput" defaultValue={toy?.price} placeholder="price bdt" type="number" {...register("price")} />
                     </div>
                     <div>
-                     <label>Quantity</label> 
+                     <label className='font-bold ml-2 text-secondary'>Quantity</label> 
                      <br />  
                     <input className="myInput" defaultValue={toy?.quantity} placeholder="quantity" type="number"  {...register("quantity")} />
 
                     </div>
                     <div>
-                    <label>Detail Description</label>
+                    <label className='font-bold ml-2 text-secondary'>Detail Description</label>
                     <br />
                     <input className="myInput w-full" defaultValue={toy?.description} placeholder="description"   {...register("description")} />
 
@@ -48,8 +48,8 @@ const Update = ({index,toy, handleUpdate}) => {
                 
                 
             </form>
-                <div className="modal-action">
-                    <label htmlFor={`my-modal-${index}`} className="btn">Yay!</label>
+                <div className="modal-action -mt-24">
+                    <label htmlFor={`my-modal-${index}`} className="btn btn-secondary">done!</label>
                 </div>
             </div>
         </div>

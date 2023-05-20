@@ -80,7 +80,7 @@ const Login = () => {
                     <p className='text-red-700 text-xl px-8 py-4'><small>{error}</small></p>
                     <p className='text-green-700 text-xl px-8'><small >{success}</small></p>
                     
-                    <Link className='px-8 -mt-6' to="/register" ><span>New to TOYOMOY?</span><button className=" px-2 btn btn-link">Register</button></Link>
+                    <Link className='px-8 -mt-6' to="/register" ><span>New to <Link to='/'><span className='text-secondary'>TOYOMOY</span></Link>?</span><button className=" px-2 btn btn-link">Register</button></Link>
                     
                     <div className="divider text-secondary">login with GOOGlE</div>
                     <div className='text-center'>

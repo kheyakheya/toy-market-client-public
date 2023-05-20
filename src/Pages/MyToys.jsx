@@ -71,10 +71,24 @@ const MyToys = () => {
 
 
     }
+    const handleHighToLow=()=>{
+        fetch(`http://localhost:5000/highSort/${user?.email}`)
+        .then(res=>res.json())
+        .then(data=>setMyToys(data))
+    }
+    const handleLowToHigh=()=>{
+        fetch(`http://localhost:5000/lowSort/${user?.email}`)
+        .then(res=>res.json())
+        .then(data=>setMyToys(data))
+    }
+
     return (
         <div className=' bg-pink-100'>
             <h1 className='text-4xl  text-secondary tracking-wide  pt-12 mb-12 text-center font-bold'>My Toys</h1>
-
+            <div className='text-center mb-8'>
+                <button onClick={handleHighToLow} className='mr-6 btn border-none bg-[#f36ea5]'>High to low Price</button>
+                <button onClick={handleLowToHigh} className='ml-6 btn border-none bg-[#f36ea5]'>Low to high Price</button>
+            </div>
            <div className='pb-24'>
            <div className="myContainer  overflow-x-auto">
                 <table className="table w-full">
