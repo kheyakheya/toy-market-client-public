@@ -7,7 +7,7 @@ const CategoryToy = () => {
     const [toys,setToys]=useState([]);
     const [active,setActive]=useState('princess')
     useEffect(()=>{
-        fetch(`http://localhost:5000/allToys/${active}`)
+        fetch(`https://assignment-eleven-server-wine.vercel.app/allToys/${active}`)
         .then(res=>res.json())
         .then(data=>setToys(data))
     },[active])

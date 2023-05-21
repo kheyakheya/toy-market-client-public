@@ -1,16 +1,18 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../Providers/AuthProvider';
 import Swal from 'sweetalert2'
+import useTitle from '../hooks/useTitle';
 
 
 
 const AddToy = () => {
+    useTitle('AddToy');
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = toy => {
         console.log(toy);
-        fetch('http://localhost:5000/allToys',{
+        fetch('https://assignment-eleven-server-wine.vercel.app/allToys',{
             method:'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(toy)

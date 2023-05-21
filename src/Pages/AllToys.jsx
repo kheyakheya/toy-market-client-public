@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const AllToys = () => {
+    useTitle('AllToys');
     const loadedToys = useLoaderData();
     const [toys,setToys]= useState(loadedToys);
     const [searchText,setSearchText]=useState("");
     const handleSearch=()=>{
         console.log(searchText);
-        fetch(`http://localhost:5000/search/${searchText}`)
+        fetch(`https://assignment-eleven-server-wine.vercel.app/search/${searchText}`)
         .then(res=>res.json())
         .then(data=>setToys(data))
 

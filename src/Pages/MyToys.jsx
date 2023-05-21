@@ -2,21 +2,23 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 import Update from '../Components/Update';
 import Swal from 'sweetalert2';
+import useTitle from '../hooks/useTitle';
 
 const MyToys = () => {
+    useTitle('myToys');
     const { user } = useContext(AuthContext);
 
     const [myToys, setMyToys] = useState([]);
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
+        fetch(`https://assignment-eleven-server-wine.vercel.app/myToys/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [user, control])
     // upadte
     const handleUpdate = (info) => {
-        fetch(`http://localhost:5000/update/${info._id}`, {
+        fetch(`https://assignment-eleven-server-wine.vercel.app/update/${info._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(info)
@@ -47,7 +49,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toy/${id}`, {
+                fetch(`https://assignment-eleven-server-wine.vercel.app/toy/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -72,12 +74,12 @@ const MyToys = () => {
 
     }
     const handleHighToLow=()=>{
-        fetch(`http://localhost:5000/highSort/${user?.email}`)
+        fetch(`https://assignment-eleven-server-wine.vercel.app/highSort/${user?.email}`)
         .then(res=>res.json())
         .then(data=>setMyToys(data))
     }
     const handleLowToHigh=()=>{
-        fetch(`http://localhost:5000/lowSort/${user?.email}`)
+        fetch(`https://assignment-eleven-server-wine.vercel.app/lowSort/${user?.email}`)
         .then(res=>res.json())
         .then(data=>setMyToys(data))
     }

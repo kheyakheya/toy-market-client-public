@@ -4,10 +4,11 @@ import CategoryToy from '../Components/CategoryToy';
 import Gallery from '../Components/Gallery/Gallery';
 import HotDeals from '../Components/HotDeals';
 import Review from '../Components/Review';
+import useTitle from '../hooks/useTitle';
 
 
 const Home = () => {
-   
+   useTitle('Home');
     return (
         <div>
            <Banner data-aos="fade"></Banner> 

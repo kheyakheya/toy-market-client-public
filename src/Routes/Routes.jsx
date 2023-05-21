@@ -36,13 +36,13 @@ import Blog from "../Pages/Blog";
         {
           path:'/toy/:id',
           element:<PrivateRout><SingleToy></SingleToy></PrivateRout>,
-          loader: ({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+          loader: ({params})=>fetch(`https://assignment-eleven-server-wine.vercel.app/toy/${params.id}`)
           
         },
         {
           path:'/allToy',
           element: <AllToys></AllToys>,
-          loader: ()=>fetch('http://localhost:5000/allToys'),
+          loader: ()=>fetch('https://assignment-eleven-server-wine.vercel.app/allToys'),
 
         },
         {

@@ -1,10 +1,11 @@
-import React from 'react';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 
 const Register = () => {
+    useTitle('Register')
     const { register, profileUpdate } = useContext(AuthContext);
     const [show, setShow] = useState(false);
     const [password, setPassword] = useState("");

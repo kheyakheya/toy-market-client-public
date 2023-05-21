@@ -1,5 +1,4 @@
 import { Heart, Rating } from '@smastrom/react-rating';
-import React from 'react';
 import '@smastrom/react-rating/style.css'
 import { Link } from 'react-router-dom';
 
