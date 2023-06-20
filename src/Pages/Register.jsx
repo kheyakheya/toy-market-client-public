@@ -24,7 +24,7 @@ const Register = () => {
         }
         else if (!/.*[A-Z].*/.test(passwordInput)) {
             setPassError("Password must have one uppercase");
-          } 
+        }
 
         else {
             setPassError("");
@@ -35,34 +35,70 @@ const Register = () => {
         setError("");
         setSuccess("");
         const name = e.target.name.value;
-        const photo = e.target.photo.value;
+       
 
         if (passError) {
             e.target.password.focus();
             return;
         }
-        console.log(name, password, email, photo)
-        // register
+        console.log(name, password, email)
+         // photo upload
+         const image = e.target.image.files[0];
+         const formData= new FormData();
+         formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY}`
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res=>res.json())
+        .then(imageData=>{
+            const photo= imageData.data.display_url;
+             // register
         register(email, password)
-            .then(result => {
-                const registeredUser = result.user;
-                setSuccess("Successfully Registered!!");
-                e.target.reset();
-                profileUpdate(name, photo)
-                    .then(() => {
+        .then(result => {
+            const registeredUser = result.user;
+            setSuccess("Successfully Registered!!");
+            e.target.reset();
+            profileUpdate(name, photo)
+                .then(() => {
 
-                        console.log(registeredUser);
-                    })
-                    .catch((error) => {
-                        // An error occurred
-                        // ...
-                        setError(error.message)
-                    });
-            })
-            .catch(error => {
-                console.log(error)
-                setError(error.message)
-            })
+                    console.log(registeredUser);
+                })
+                .catch((error) => {
+                    // An error occurred
+                    // ...
+                    setError(error.message)
+                });
+        })
+        .catch(error => {
+            console.log(error)
+            setError(error.message)
+        })
+
+            
+        })
+        // // register
+        // register(email, password)
+        //     .then(result => {
+        //         const registeredUser = result.user;
+        //         setSuccess("Successfully Registered!!");
+        //         e.target.reset();
+        //         profileUpdate(name, photo)
+        //             .then(() => {
+
+        //                 console.log(registeredUser);
+        //             })
+        //             .catch((error) => {
+        //                 // An error occurred
+        //                 // ...
+        //                 setError(error.message)
+        //             });
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //         setError(error.message)
+        //     })
 
 
     };
@@ -75,7 +111,7 @@ const Register = () => {
                     <h1 className="text-5xl tracking-wide my-6 font-bold text-white">Please Register</h1>
                 </div>
                 <div className='grid md:grid-cols-2 place-items-center'>
-                    
+
                     <div className="card flex-shrink-0 w-full mt-6 max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleRegister} className="card-body pb-2 mt-6">
                             <div className="form-control">
@@ -102,10 +138,10 @@ const Register = () => {
                             </div>
 
                             <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text"></span>
+                                <label htmlFor='image' className='block mb-2 text-sm'>
+                                    Photo URL:
                                 </label>
-                                <input type="text" name='photo' placeholder="photo url" className="input input-bordered" />
+                                <input required  type='file' id='image' name='photo' accept='image/*' />
                             </div>
 
                             <div className="form-control mt-6">

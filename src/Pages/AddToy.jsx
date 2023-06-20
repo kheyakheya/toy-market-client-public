@@ -10,8 +10,11 @@ const AddToy = () => {
     useTitle('AddToy');
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = toy => {
-        console.log(toy);
+    const onSubmit = data => {
+        const toy= {
+            ...data, price: parseFloat(data.price)
+        };
+        
         fetch('https://assignment-eleven-server-wine.vercel.app/allToys',{
             method:'POST',
             headers: {'Content-Type':'application/json'},

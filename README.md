@@ -10,4 +10,5 @@
 * Shown single data in view details which is private route like mytoys and addtoy.
 * implemented delete and update in mytoys page 
 * implemented sorting by price ascending and descending 
+* made public repo
 

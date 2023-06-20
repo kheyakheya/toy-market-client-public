@@ -11,7 +11,8 @@ const Navbar = () => {
         })
         .catch(error=>console.log(error))
     }
-    const navItems = <>
+    const navItems =
+     <>
         
         <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-secondary text-2xl font-bold' : 'myMenu')}>Home</NavLink>
         </li>
@@ -33,7 +34,8 @@ const Navbar = () => {
         <li><Link  className= 'myMenu'><button onClick={handleLogOut}>Logout</button></Link>
         </li>
         </> : <li><NavLink to='/login' className={({ isActive }) => (isActive ? 'text-secondary text-xl font-bold' : 'myMenu')}>Login</NavLink>
-        </li> } 
+        </li> 
+        } 
     </>
     return (
         <div className="navbar bg-base-100 h-24 mb-4 myContainer">
